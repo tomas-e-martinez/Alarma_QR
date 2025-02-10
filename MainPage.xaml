@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             x:Class="AlarmaQR.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Hello, World!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Escaneá este codigo para apagar la alarma"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <zxing:BarcodeGeneratorView
+                  HeightRequest="100"
+                  WidthRequest="100"
+                  ForegroundColor="DarkBlue"
+                  Value="ALARMA_OFF"
+                  Format="QrCode"
+                  Margin="3" />
+
+
+             <Button
+                x:Name="CounterBtn"
+                Text="Programar Alarma" 
+                Clicked="ProgramarAlarma"
+                HorizontalOptions="Fill" />
+            
+            <Button
+               x:Name="ScanBtn"
+               Text="Escanear QR" 
+               Clicked="ScanClicked"
+               HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
